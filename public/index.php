@@ -8,10 +8,14 @@
   <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col">hola</div>
-        <div class="col"></div>
+        <div class="col-sm-6">
+          <img src="#" alt="">
+        </div>
+        <div class="col-sm-6">
+
+        </div>
       </div>
     </div>
 </body>
