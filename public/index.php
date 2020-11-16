@@ -1,22 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
-  <title>Document</title>
-</head>
-<body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <img src="#" alt="">
-        </div>
-        <div class="col-sm-6">
+<?php
 
-        </div>
+Include("header.html");
+Include("conecBDD.php");
+
+$conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
+
+if ($conexio){
+
+$consulta = "SELECT id, nom from nomTaula";
+$resultat = $conexio -> query($consulta);
+
+  if ($resultat) {
+
+    while ($row = $resultat -> fetch_array()) {
+      $nom = $row['nom'];
+      $id = $id['id'];
+      ?>
+      <div>
+        <br>
+        <table>
+          <tr> <?php echo $nom;?> </tr><br>
+        </table>
+          <a href="detalls.php?id=<?php echo $row['id'];?>">
+            <input type="button" value="Detalles del producto"/>
+          </a>
+          <br>
       </div>
-    </div>
-</body>
-</html>
+
+      <?php
+    }
+  }
+}
+
+?>
