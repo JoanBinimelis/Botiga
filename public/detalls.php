@@ -9,7 +9,7 @@ $id = (int)$_GET['id'];
 
 if($conexio){
 
-  $consulta = "SELECT nom, preu, descripcio from nomTaula where id = $id";
+  $consulta = "SELECT nom, preu, descripcio from Camiseta where id = $id";
   $resultat = $conexio->query($consulta);
 
   if($resultat){
