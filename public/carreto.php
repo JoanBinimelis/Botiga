@@ -19,10 +19,10 @@ if($nom != ""){
   $cercaNom = array_search($nom, $_SESSION["carreto"]);
     if($cercaNom === FALSE){
       $_SESSION['carreto'][] = $nom;
-      $_SESSION['cont'][] = 1;
+      $_SESSION['count'][] = 1;
     }
     else{
-      $_SESSION['cont'][$cercaNom] += 1;
+      $_SESSION['count'][$cercaNom] += 1;
     }
 }
 ?>
@@ -43,7 +43,7 @@ if($nom != ""){
        ?>
 
        <a href="index.php">
-         <input type="button" value="Segueix amb les comrpes"/>
+         <input type="button" value="Segueix amb les compres"/>
        </a>
 
        <form action='tancaSessio.php'>
