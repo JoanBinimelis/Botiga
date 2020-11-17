@@ -7,7 +7,7 @@ $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
 if ($conexio){
 
-$consulta = "SELECT id, Nom from Camiseta";
+$consulta = "SELECT id, Nom, Preu from Camiseta";
 $resultat = $conexio -> query($consulta);
 
   if ($resultat) {
@@ -15,6 +15,7 @@ $resultat = $conexio -> query($consulta);
     while ($row = $resultat -> fetch_array()) {
       $nom = $row['Nom'];
       $id = $row['id'];
+      $preu = $row['Preu'];
       ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -31,6 +32,7 @@ $resultat = $conexio -> query($consulta);
       <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><?php echo $nom;?></h5>
+        <p><?php echo $preu;?></p>
         <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
       </div>
     </div>
@@ -38,18 +40,7 @@ $resultat = $conexio -> query($consulta);
 
   </body>
 </html>
-      <!--<div>
-        <br>
-        <table>
-          <tr> <?php echo $nom;?> </tr><br>
-        </table>
-          <a href="detalls.php?id=<?php echo $row['id'];?>">
-            <input type="button" value="Detalles del producto"/>
-          </a>
-          <br>
-      </div>-->
-
-      <?php
+<?php
     }
   }
 }
