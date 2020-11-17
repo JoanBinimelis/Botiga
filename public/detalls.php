@@ -51,7 +51,7 @@ if($conexio){
               <td><img src="/img/<?php echo $id ?>.jpg" height="200"></td>
             </tr>
           </table>
-          <a href="carreto.php?nom=<?php echo $row['Nom'];?>"><input type="button" value="AÃ±adir en el carrito"/></a>
+          <a href="carreto.php?nom=<?php echo $row['Nom'];?>"><input type="button" value="Añadir el carrito"/></a>
           <br>
           <a href="index.php">
             <input type="button" value="Torna"/> </a>
