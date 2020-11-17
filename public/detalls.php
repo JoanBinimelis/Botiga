@@ -1,7 +1,7 @@
 <?php
 
-Include("header.html");
-Include("conecBDD.php");
+include("header.html");
+$inc = include("../config/conecBDD.php");
 
 $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
@@ -9,14 +9,14 @@ $id = (int)$_GET['id'];
 
 if($conexio){
 
-  $consulta = "SELECT nom, preu, descripcio from Camiseta where id = $id";
+  $consulta = "SELECT Nom, Preu, Descripcio from Camiseta where id = $id";
   $resultat = $conexio->query($consulta);
 
   if($resultat){
     while($row = $resultat->fetch_array()){
-      $preu = $row['preu'];
-      $desc = $row['descripcio'];
-      $nom = $row['nom'];
+      $preu = $row['Preu'];
+      $desc = $row['Descripcio'];
+      $nom = $row['Nom'];
       ?>
 
       <html>
@@ -51,7 +51,7 @@ if($conexio){
               <td><img src="/img/<?php echo $id ?>.jpg" height="200"></td>
             </tr>
           </table>
-          <a href="carreto.php?nom=<?php echo $row['nom'];?>"></a>
+          <a href="carreto.php?nom=<?php echo $row['Nom'];?>"></a>
           <br>
           <a href="index.php">
             <input type="button" value="Torna"/> </a>
