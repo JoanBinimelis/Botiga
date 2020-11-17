@@ -13,7 +13,7 @@ $resultat = $conexio -> query($consulta);
   if ($resultat) {
 
     while ($row = $resultat -> fetch_array()) {
-      $nom = $row['nom'];
+      $nom = $row['Nom'];
       $id = $id['id'];
       ?>
       <div>
