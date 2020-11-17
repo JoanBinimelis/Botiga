@@ -5,6 +5,8 @@ Include("conecBDD.php");
 
 $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
+$id = (int)$_GET['id'];
+
 if($conexio){
 
   $consulta = "SELECT nom, preu, descripcio from nomTaula where id = $id";
@@ -58,7 +60,7 @@ if($conexio){
       </html>
 
       <?php
-      
+
     }
   }
 }
