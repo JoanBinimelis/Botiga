@@ -7,7 +7,7 @@ $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
 if ($conexio){
 
-$consulta = "SELECT id, nom from Camiseta";
+$consulta = "SELECT id, Nom from Camiseta";
 $resultat = $conexio -> query($consulta);
 
   if ($resultat) {
