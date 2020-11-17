@@ -1,7 +1,7 @@
 <?php
 
-Include("header.html");
-Include("conecBDD.php");
+include("header.html");
+$inc = include("conecBDD.php");
 
 $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
