@@ -28,7 +28,7 @@ $resultat = $conexio -> query($consulta);
   <body>
 
     <div class="card" style="width: 18rem;">
-      <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
+      <img src="img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><?php echo $nom;?></h5>
         <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Go somewhere</a>
