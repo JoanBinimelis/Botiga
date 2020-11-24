@@ -27,11 +27,13 @@ $resultat = $conexio -> query($consulta);
       <?php
 
       while ($row = $resultat -> fetch_array()) {
-        
+        $nom = $row['Nom'];
+        $id = $row['id'];
+        $preu = $row['Preu'];
+
         ?>
 
-
-            <div class="card" style="width: 18rem;">
+            <div class="card">
               <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $nom;?></h5>
