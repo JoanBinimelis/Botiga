@@ -5,9 +5,7 @@ $inc = include("../config/conecBDD.php");
 
 $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
-if ($conexio->connect_error){
-die("Connection failed: " . $conexio->connect_error);
-}
+if ($conexio){
 
 $consulta = "SELECT id, Nom, Preu from Camiseta";
 $resultat = $conexio->query($consulta);
@@ -23,14 +21,15 @@ $resultat = $conexio->query($consulta);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
+
 <?php
-if ($resultat -> num_rows > 0) {
+if ($resultat) {
   while ($row = $resultat->fetch_array()) {
     $nom = $row['Nom'];
     $id = $row['id'];
     $preu = $row['Preu'];
-?>
+  ?>
+        <div class="container">
             <div class="card">
               <img src="/img/<?php echo $id;?>.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -39,20 +38,11 @@ if ($resultat -> num_rows > 0) {
                 <a href="detalls.php?id=<?php echo $id;?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
-
-            <?php
-
-          } else {
-            echo "0 results";
-          }
-            $conexio->close();
-            ?>
-
-     </div>
+          </div>
    </body>
   </html>
 <?php
-
+}
   }
 
 ?>
