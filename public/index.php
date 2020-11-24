@@ -40,14 +40,15 @@ if ($resultat) {
                 <a href="detalls.php?id=<?php echo $id;?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
-
+            <?php
+            }
+              }
+?>
           </div>
 
    </body>
   </html>
 <?php
-}
-  }
 }
 
 ?>
