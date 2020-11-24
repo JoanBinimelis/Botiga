@@ -44,5 +44,6 @@ if ($resultat) {
 <?php
 }
   }
+}
 
 ?>
