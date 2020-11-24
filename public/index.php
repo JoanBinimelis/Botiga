@@ -12,11 +12,6 @@ die("Connection failed: " . $conexio->connect_error);
 $consulta = "SELECT id, Nom, Preu from Camiseta";
 $resultat = $conexio->query($consulta);
 
-if ($resultat -> num_rows > 0) {
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -30,12 +25,12 @@ if ($resultat -> num_rows > 0) {
   <body>
     <div class="container">
 <?php
-while ($row = $resultat->fetch_array()) {
-$nom = $row['Nom'];
-$id = $row['id'];
-$preu = $row['Preu'];
+if ($resultat -> num_rows > 0) {
+  while ($row = $resultat->fetch_array()) {
+    $nom = $row['Nom'];
+    $id = $row['id'];
+    $preu = $row['Preu'];
 ?>
-
             <div class="card">
               <img src="/img/<?php echo $id;?>.jpg" class="card-img-top" alt="...">
               <div class="card-body">
