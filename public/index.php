@@ -15,10 +15,7 @@ $resultat = $conexio->query($consulta);
 if ($resultat -> num_rows > 0) {
 
 
-while ($row = $resultat->fetch_assoc()) {
-$nom = $row['Nom'];
-$id = $row['id'];
-$preu = $row['Preu'];
+
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +29,12 @@ $preu = $row['Preu'];
   </head>
   <body>
     <div class="container">
-
+<?php
+while ($row = $resultat->fetch_assoc()) {
+$nom = $row['Nom'];
+$id = $row['id'];
+$preu = $row['Preu'];
+?>
 
             <div class="card">
               <img src="/img/<?php echo $id;?>.jpg" class="card-img-top" alt="...">
