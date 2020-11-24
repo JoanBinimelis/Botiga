@@ -45,9 +45,8 @@ $resultat = $conexio -> query($consulta);
 </html>
 <?php
 ?>
-
-
-
     }
   }
 }
+<?php
+?>
