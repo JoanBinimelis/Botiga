@@ -23,6 +23,7 @@ $resultat = $conexio -> query($consulta);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
   <body>
+    <div class="col-sm-6 col-md-6">
       <?php
 
       while ($row = $resultat -> fetch_array()) {
@@ -31,7 +32,7 @@ $resultat = $conexio -> query($consulta);
         $preu = $row['Preu'];
         ?>
 
-          <div class="col-sm-6 col-md-6">
+
             <div class="card" style="width: 18rem;">
               <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -40,11 +41,11 @@ $resultat = $conexio -> query($consulta);
                 <a href="detalls.php?id=<?php echo $id;?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
-        </div>
+
 
       <?php
        ?>
-
+     </div>
   </body>
 </html>
 <?php
