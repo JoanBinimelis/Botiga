@@ -17,21 +17,20 @@ $inc = include("../config/conecBDD.php");
   <body>
     <div class="container">
         <?php
+
         $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
 
-
-
-      if ($conexio -> connect_error){
+      if ($conexio->connect_error){
         die("Connection failed: " . $conexio->connect_error);
       }
 
       $consulta = "SELECT id, Nom, Preu from Camiseta";
-      $resultat = $conexio -> query($consulta);
+      $resultat = $conexio->query($consulta);
 
         if ($resultat -> num_rows > 0) {
 
 
-      while ($row = $resultat -> fetch_assoc()) {
+      while ($row = $resultat->fetch_assoc()) {
         $nom = $row['Nom'];
         $id = $row['id'];
         $preu = $row['Preu'];
@@ -46,7 +45,7 @@ $inc = include("../config/conecBDD.php");
                 <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
-            <?
+            <?php
 
           } else {
             echo "0 results";
