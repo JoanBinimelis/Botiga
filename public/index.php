@@ -38,12 +38,14 @@ $resultat = $conexio -> query($consulta);
           <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
         </div>
       </div>
+      <?php
+      ?>
     </div>
   </body>
 </html>
-
+<?php
     }
   }
 }
-<?php
+
 ?>
