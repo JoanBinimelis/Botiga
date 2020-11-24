@@ -27,9 +27,7 @@ $resultat = $conexio -> query($consulta);
       <?php
 
       while ($row = $resultat -> fetch_array()) {
-        $nom = $row['Nom'];
-        $id = $row['id'];
-        $preu = $row['Preu'];
+        
         ?>
 
 
