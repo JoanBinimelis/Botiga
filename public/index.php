@@ -30,7 +30,7 @@ $resultat = $conexio -> query($consulta);
         $id = $row['id'];
         $preu = $row['Preu'];
         ?>
-      <div class="card" style="width: 18rem;">
+      <div class="card col-4" style="width: 18rem;">
         <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><?php echo $nom;?></h5>
