@@ -3,10 +3,7 @@
 include("header.html");
 $inc = include("../config/conecBDD.php");
 
-$conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
-
-
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,6 +17,10 @@ $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
   <body>
     <div class="container">
         <?php
+        $conexio = new mysqli($ServerName,$rootName,$password,$BDDName);
+
+
+
       if ($conexio){
 
       $consulta = "SELECT id, Nom, Preu from Camiseta";
