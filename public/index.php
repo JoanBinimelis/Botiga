@@ -21,15 +21,17 @@ $inc = include("../config/conecBDD.php");
 
 
 
-      if ($conexio){
+      if ($conexio -> connect_error){
+        die("Connection failed: " . $conexio->connect_error);
+      }
 
       $consulta = "SELECT id, Nom, Preu from Camiseta";
       $resultat = $conexio -> query($consulta);
 
-        if ($resultat) {
+        if ($resultat -> num_rows > 0) {
 
 
-      while ($row = $resultat -> fetch_array()) {
+      while ($row = $resultat -> fetch_assoc()) {
         $nom = $row['Nom'];
         $id = $row['id'];
         $preu = $row['Preu'];
@@ -44,13 +46,19 @@ $inc = include("../config/conecBDD.php");
                 <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
-            <? ?>
+            <?
+
+          } else {
+            echo "0 results";
+          }
+            $conexio->close();
+            ?>
+
      </div>
    </body>
   </html>
 <?php
-    }
+
   }
-}
 
 ?>
