@@ -30,7 +30,7 @@ if ($resultat -> num_rows > 0) {
   <body>
     <div class="container">
 <?php
-while ($row = $resultat->fetch_assoc()) {
+while ($row = $resultat->fetch_array()) {
 $nom = $row['Nom'];
 $id = $row['id'];
 $preu = $row['Preu'];
