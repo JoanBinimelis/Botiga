@@ -11,10 +11,7 @@ $consulta = "SELECT id, Nom, Preu from Camiseta";
 $resultat = $conexio -> query($consulta);
 
   if ($resultat) {
-    while ($row = $resultat -> fetch_array()) {
-      $nom = $row['Nom'];
-      $id = $row['id'];
-      $preu = $row['Preu']; ?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -27,6 +24,11 @@ $resultat = $conexio -> query($consulta);
 </head>
   <body>
     <div class="container-fluid">
+      <?php
+      while ($row = $resultat -> fetch_array()) {
+        $nom = $row['Nom'];
+        $id = $row['id'];
+        $preu = $row['Preu']; ?>
       <div class="card" style="width: 18rem;">
         <img src="/img/<?php echo $id ?>.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -35,10 +37,11 @@ $resultat = $conexio -> query($consulta);
           <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
         </div>
       </div>
+      <?php
     </div>
   </body>
 </html>
-<?php
+
     }
   }
 }
