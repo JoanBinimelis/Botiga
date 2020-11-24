@@ -23,7 +23,6 @@ $resultat = $conexio -> query($consulta);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
   <body>
-<div class="row">
       <?php
 
       while ($row = $resultat -> fetch_array()) {
@@ -38,14 +37,14 @@ $resultat = $conexio -> query($consulta);
               <div class="card-body">
                 <h5 class="card-title"><?php echo $nom;?></h5>
                 <p><?php echo $preu;?>€</p>
-                <a href="detalls.php?id=<?php echo $row['id'];?>" class="btn btn-primary">Detalls</a>
+                <a href="detalls.php?id=<?php echo $id;?>" class="btn btn-primary">Detalls</a>
               </div>
             </div>
         </div>
 
       <?php
        ?>
-</div>
+
   </body>
 </html>
 <?php
